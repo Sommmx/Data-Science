@@ -34,7 +34,7 @@ my_tesla = Electric_car("Tesla","Model S", "85KWH")
 
 
 simple_car = Car("Tata", "Safari")
-# print(simple_car.fuel_type())
+print(simple_car.fuel_type())
 
 
 
