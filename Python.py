@@ -119,3 +119,29 @@ def Hello():
     print( "Hello")
 
 # Hello()
+
+
+
+#ABSTRACTION
+
+from abc import ABC, abstractmethod
+
+
+class notification(ABC):
+    @abstractmethod
+    def send(self,message, user):
+        pass
+
+class sms_notificatoin(notification):
+     def send(self, message, user):
+         print(f"Sending sms to {user}:{message}")
+
+class email_notificatoin(notification):
+     def send(self, message, user):
+         print(f"Sending email to {user}:{message}")
+
+
+
+notifications = sms_notificatoin()
+
+notifications.send("Hi","Som")
