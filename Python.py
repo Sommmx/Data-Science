@@ -41,3 +41,26 @@ print(simple_car.fuel_type())
 print(simple_car.genereal())
 # print(my_car.brand)
 # print(my_car.full_name())
+
+
+
+# *args and **kwargs
+def sample_function(*args, **kwargs):
+    print(args)
+    print(kwargs)
+
+
+sample_function(1,2,3,name = "Som",surname = "Pichewar")
+
+
+
+#RECURSION
+def recursion(n):
+    if n==0 or n==1:
+        return 1
+    return n*recursion(n-1)
+
+print(recursion(5))
+
+
+
