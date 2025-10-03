@@ -34,11 +34,11 @@ my_tesla = Electric_car("Tesla","Model S", "85KWH")
 
 
 simple_car = Car("Tata", "Safari")
-print(simple_car.fuel_type())
+#print(simple_car.fuel_type())
 
 
 
-print(simple_car.genereal())
+# print(simple_car.genereal())
 # print(my_car.brand)
 # print(my_car.full_name())
 
@@ -50,7 +50,7 @@ def sample_function(*args, **kwargs):
     print(kwargs)
 
 
-sample_function(1,2,3,name = "Som",surname = "Pichewar")
+#sample_function(1,2,3,name = "Som",surname = "Pichewar")
 
 
 
@@ -60,7 +60,62 @@ def recursion(n):
         return 1
     return n*recursion(n-1)
 
-print(recursion(5))
+#print(recursion(5))
+
+
+# ENCAPSULATION
+class bank_acc:
+    def __init__(self,account_number, owner, balance = 0):
+        self.account_number = account_number
+        self.owner = owner
+        self.__balance = balance   ## HIDDEN (ENCAPSULATION)
+    def deposit(self,amount):
+        if amount < 0:
+            print("Please enter valid amount")
+        else:
+            self.__balance += amount
+            print(f"Successfully added {amount} to your account")
+    def withdraw(self,amount):
+        if amount > self.__balance:
+            print("Insufficient balance")
+        elif amount < 0:
+            print("Please enter valid amount")
+        else:
+            self.__balance -= amount
+            print(f"Successfully withdrawn {amount} from your account")
+    def get_balance(self):
+        return self.__balance
+    def __str__(self):
+        return f"Account number [{self.account_number}] - Owner: {self.owner}"
 
 
 
+
+
+# account1 = bank_acc("12345", "somnath", 1000)
+
+# print(account1)
+# # print(account1.get_balance())
+# account1.deposit(500)
+# account1.withdraw(200)
+
+# account1.withdraw(2000)
+
+
+
+
+
+#DECORATOR
+def decorator(func):
+    def wrapper():
+        print("Before function")
+        func()
+        print("After function")
+    return wrapper
+
+
+@decorator
+def Hello():
+    print( "Hello")
+
+# Hello()
