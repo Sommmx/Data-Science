@@ -123,7 +123,7 @@ def Hello():
 
 
 #ABSTRACTION
-
+#Example 1
 from abc import ABC, abstractmethod
 
 
@@ -145,3 +145,31 @@ class email_notificatoin(notification):
 notifications = sms_notificatoin()
 
 notifications.send("Hi","Som")
+
+
+
+
+# Example 2
+
+from abc import ABC, abstractmethod
+class document(ABC):
+    @abstractmethod
+    def read(self):
+        pass
+
+    @abstractmethod
+    def save(self):
+        pass
+
+
+class PDFDocument(document):
+    def read(self):
+        print("Reading the document")
+    def save(self):
+        print("Saving the document")
+
+
+
+doc = PDFDocument()
+doc.read()
+doc.save()
